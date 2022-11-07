@@ -8,17 +8,44 @@ const textarray=[];
 let count=0;
 var counter_id=0;
       
+function addTask(){
+    let element=document.createElement("div")
+    element.setAttribute('draggable', true);
+        this.counter_id+=1
+        element.setAttribute('id', this.counter_id);
+
+        element.addEventListener('dragstart', (li) => {
+        li.dataTransfer.setData("text",li.target.id) 
+        });
+        addTodo.addEventListener("dragover",(li)=>{
+          li.preventDefault()
+        });
+        addTodo.addEventListener("drop",(li)=>{
+          const dragedItemId=li.dataTransfer.getData("text")
+          addTodo.append(document.getElementById(dragedItemId))
+        });
+       
+    element.classList.add("todoPart");
+    let todoText=document.createElement("span");
+    todoText.classList.add("todoText");
+    todoText.innerText=input.value;
+    textarray.push(input.value)
+    element.append(todoText);
+    addTodo.append(element)
+    array.push(element);
+    addTodo.style.display="block";
+}
 
 btn.addEventListener("click",()=>{
     if(input.value !=""){
-       
+       addTask();
        input.value="";    
     } 
 });
 
 input.addEventListener("keypress",(e)=>{
     if(e.key==="Enter"){
-        
+        addTask();
         input.value="";
     }
 });
@@ -39,3 +66,48 @@ addTodo.addEventListener("click",(e)=>{
        }  
     }
 });
+
+function sortList() {
+    let myul,
+        rows,
+        switching,
+        i,
+        x,
+        y,
+        shouldSwitch,
+        dir,
+        switchcount = 0;
+    myul = document.getElementById("addTodo");
+    switching = true;
+    dir = "asc";
+    while (switching) {
+        switching = false;
+        rows = myul.getElementsByTagName("div");
+        for (i = 0; i < rows.length - 1; i++) {
+            shouldSwitch = false;
+            x = rows[i];
+            y = rows[i + 1];
+            if (dir == "asc") {
+                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                    shouldSwitch = true;
+                    break;
+                }
+            } else if (dir == "desc") {
+                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+        }
+        if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            switchcount++;
+        } else {
+            if (switchcount == 0 && dir == "asc") {
+                dir = "desc";
+                switching = true;
+            }
+        }
+    }
+}

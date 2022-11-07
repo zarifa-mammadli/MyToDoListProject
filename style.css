@@ -1,12 +1,16 @@
 .todo{
     box-sizing: border-box;
-    position: absolute;
+    position: relative;
     width: 336px;
-    height: 236px;
-    left: 550px;
-    top: 200px;
     border: 1px solid #C4C4C4;
     border-radius: 10px;
+}
+.container{
+    width: 80% ;
+    margin: 10% auto ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .color-header{
