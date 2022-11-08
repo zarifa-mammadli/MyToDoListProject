@@ -29,9 +29,10 @@ function addTask(){
     let todoText=document.createElement("span");
     todoText.classList.add("todoText");
     todoText.innerText=input.value;
-    textarray.push(input.value)
+    textarray.push(input.value);
     element.append(todoText);
-    addTodo.append(element)
+    element.innerHTML+=`<img class="delete-icon" src="images/xicon.png" alt="">`
+    addTodo.append(element);
     array.push(element);
     addTodo.style.display="block";
 }
@@ -111,3 +112,15 @@ function sortList() {
         }
     }
 }
+
+let sort1 = document.querySelector(".filter-asc");
+let sort2 = document.querySelector(".filter-desc");
+sort2.style.display = "none"
+sort1.addEventListener("click", () => {
+  sort2.style.display = "block"
+  sort1.style.display = "none"
+});
+sort2.addEventListener("click", () => {
+  sort1.style.display = "block"
+  sort2.style.display = "none"
+});

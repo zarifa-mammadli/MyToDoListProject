@@ -46,9 +46,11 @@
     margin: 5% auto;
     display: flex;
     justify-content: flex-end;
-}
-.filter-asc{
     cursor: pointer;
+    
+}
+.filter-ascç .filter-desc{
+    display: block;
 }
 .todo-input{
     width: 286px;
@@ -71,6 +73,12 @@ input{
     border: none;
     outline: none;
 }
+.delete-icon{
+    cursor: pointer;
+}
+.delete-icon:hover{
+    fill: #833AE0;
+}
 .button{
     text-align: center;
     margin-bottom: 3%; 
@@ -81,14 +89,18 @@ input{
     margin-top: 5%;
     cursor: pointer;
 }
+button {
+    border: none;
+    background-color: white;
+}
 .addTodo{
-    width: 80%;
+    width: 286px;
     padding: 5px;
     margin: 5% auto;
     border: 1px solid #C4C4C4;
     box-sizing: border-box;
     border-radius: 10px;  
-    color: #C4C4C4;
+    color: black;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
