@@ -1,7 +1,7 @@
 const input=document.querySelector(".inputElement");
 const addTodo=document.querySelector(".addTodo");
 const mark=document.querySelector(".delete-icon");
-const btn=document.querySelector(".button");
+const btn=document.querySelector(".button-text");
 const filter=document.querySelector(".filter-asc");
 const array=[];
 const textarray=[];
@@ -124,3 +124,6 @@ sort2.addEventListener("click", () => {
   sort1.style.display = "block"
   sort2.style.display = "none"
 });
+
+
+  
