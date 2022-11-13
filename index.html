@@ -12,25 +12,30 @@
     </head>
     
     <body>
-        <form class="container">
+        <div class="container">
             <div class="todo">
                 <div class="color-header"></div>
                 <div class="todo-header"><span>To-do list</span></div>
                 <div class="for-filter"> 
                     <img onclick="sortList()" class="filter-asc" src="images/sort.png" alt="">
                     <img onclick="sortList()" class="filter-desc" src="images/sort2.png" alt="">
+                    <img onclick="sortList()" class="filter-asc1" src="images/sortblack.png" alt="">
+                    <img onclick="sortList()" class="filter-desc2" src="images/sortblack2.png" alt="">
                 </div>
                 <div class="todo-input">
                     <input class="inputElement" type="text">
-                    
+                    <img class="delete-icon" src="images/xicon.svg" alt="">
+                    <!-- <img class="delete-icon2" src="images/xicon2.svg" alt=""> -->
                 </div>
                 <div id="addTodo" class="addTodo"></div> 
-                <div class="button">
-                    <button class="plus">+</button>
-                    <button class="button-text">Добавить</button>
+                <!-- <div class="todoPart"> <span class="todoText">text</span></div> -->
+                <div class="button-all">    
+                    <div class="button">
+                        <button class="button-text">Добавить</button>
+                    </div>
                 </div>
             </div>
-        </form>  
+        </div>  
         <script src="script.js"></script>     
     </body>
 </html>
